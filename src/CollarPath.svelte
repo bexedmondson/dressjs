@@ -1,27 +1,24 @@
 <script>
-    export let h = 100;
-    export let w = 100;
+    import '$lib/collars.js';
+    import { getCollarFlat, getCollarRound } from '$lib/collars.js';
+
     export let type = "round";
+    export let left = [40, 10];
+    export let right = [60, 10];
 </script>
 
 {#if (type === "round")}
 <path
-    d= "M {w/2-w/8},{h/8} 
-        C {w/2-w/8},{h/4-h/16} {w/2-w/16},{h/4} {w/2},{h/4}
-        C {w/2+w/16},{h/4} {w/2+w/8},{h/4-h/16} {w/2+w/8},{h/8}
-       "
+    d= {getCollarRound(left, right)}
     fill="none"
     stroke="black"
     stroke-width="1px"
 />
 {:else}
 <path
-    d= "M {w/2-w/8},{h/8} 
-        C {w/2-w/8},{h/4-h/16} {w/2-w/16},{h/4} {w/2},{h/4}
-        C {w/2+w/16},{h/4} {w/2+w/8},{h/4-h/16} {w/2+w/8},{h/8}
-       "
+    d= {getCollarFlat(left, right)}
     fill="none"
-    stroke="red"
+    stroke="black"
     stroke-width="1px"
 />
 {/if}
