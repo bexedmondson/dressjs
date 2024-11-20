@@ -2,8 +2,8 @@
 	import { draw } from 'svelte/transition';
     import '$lib/collars.js';
     import CollarPath from "../CollarPath.svelte";
-
-    let collarType = "round";
+    import CollarSelect from '../CollarSelect.svelte';
+    let collarType = "crew";
 </script>
 
 <h1>Welcome to SvelteKit</h1>
@@ -11,15 +11,7 @@
 
 <div class="parent-container">
     <div class="buttoncolumn">
-        <button onclick={ (clicked) => {
-                                if (collarType === "round") 
-                                    collarType = "flat";
-                                else
-                                    collarType = "round";
-                                }
-                        }>
-        {collarType}
-        </button>
+        <CollarSelect bind:selected={collarType}></CollarSelect>
     </div>
 
     <div class="diagram">
@@ -39,15 +31,14 @@
 		width: 100;
 	}
     .parent-container{
-        display: flex grid;
-        gap: 1rem;
+        display: flex;
+        justify-content: center;
 	}
-	.buttoncolumn{ 
-        float: left;
-        width: 25%;
+	.buttoncolumn{
+        width: 30%;
+        display: block;
 	}
     .diagram{
-        float: left;
-        width: 75%;
+        width: 60%;
     }
 </style>
