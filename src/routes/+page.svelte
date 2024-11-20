@@ -16,9 +16,7 @@
 
     <div class="diagram">
         <svg viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
-            <!--{#key collarType}-->
             <CollarPath left={[40, 10]} right={[60, 10]} />
-            <!-- type={collarType}  {/key}-->
         </svg>
     </div>
 	
