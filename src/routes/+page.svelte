@@ -3,7 +3,7 @@
     import '$lib/collars.js';
     import CollarPath from "../CollarPath.svelte";
     import CollarSelect from '../CollarSelect.svelte';
-    let collarType = "crew";
+    import {collar} from "$lib/choices.js";
 </script>
 
 <h1>Welcome to SvelteKit</h1>
@@ -11,14 +11,14 @@
 
 <div class="parent-container">
     <div class="buttoncolumn">
-        <CollarSelect bind:selected={collarType}></CollarSelect>
+        <CollarSelect></CollarSelect>
     </div>
 
     <div class="diagram">
         <svg viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
-            {#key collarType}
-            <CollarPath left={[40, 10]} right={[60, 10]} type={collarType} />
-            {/key}
+            <!--{#key collarType}-->
+            <CollarPath left={[40, 10]} right={[60, 10]} />
+            <!-- type={collarType}  {/key}-->
         </svg>
     </div>
 	
@@ -40,5 +40,8 @@
 	}
     .diagram{
         width: 60%;
+    }
+    :global(.optionButton){
+        min-width: 50px;
     }
 </style>

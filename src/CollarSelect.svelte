@@ -1,6 +1,6 @@
 <script>
-    const collarOptions = ['crew', 'flat', 'V', 'boat'];
-	export let selected = collarOptions[0];
+    import {collarOptions} from "$lib/data.json";
+    import {collar} from "$lib/choices.js";
 </script>
 
 <h2>Collar</h2>
@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={collarOption}
-        style={(selected === collarOption) ? 'border-color: deepskyblue' : ''}
-        onclick={() => selected = collarOption}
+        style={($collar === collarOption) ? 'border-color: deepskyblue' : ''}
+        onclick={() => $collar = collarOption}
     >{collarOption}</button>
     {/each}
 </div>
@@ -20,8 +20,5 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-    }
-    .optionButton{
-        min-width: 50px;
     }
 </style>
