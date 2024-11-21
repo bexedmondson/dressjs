@@ -1,0 +1,21 @@
+<script>
+    import '$lib/waist.js';
+    import * as waist from '$lib/waist.js';
+    import {waistline, waistCinch, maxDiagramHeight, maxDiagramWidth} from "$lib/choices";
+</script>
+
+{#if ($waistCinch === "thin elastic")}
+<path
+    d= {waist.getWaistCinchThinElastic($maxDiagramWidth, $maxDiagramHeight, $waistline)}
+    fill="none"
+    stroke="black"
+    stroke-width="1px"
+/>
+<!--{:else}
+<path
+    d= {waist.getWaistCinchThinElastic(maxX, maxY, $waistline)}
+    fill="none"
+    stroke="black"
+    stroke-width="1px"
+/>-->
+{/if}

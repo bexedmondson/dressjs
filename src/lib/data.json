@@ -1,9 +1,20 @@
 {
     "collarOptions":
     [
+        "boat",
         "crew",
         "flat",
-        "V",
-        "boat"
+        "scoop",
+        "V"
+    ],
+    "waistlineOptions":
+    [
+        "high",
+        "natural",
+        "low"
+    ],
+    "waistCinchOptions":
+    [
+        "thin elastic"
     ]
 }
