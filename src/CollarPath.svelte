@@ -21,6 +21,13 @@
     stroke="black"
     stroke-width="1px"
 />
+{:else if ($collar === "scoop")}
+<path
+    d= {collars.getCollar(left, right)}
+    fill="none"
+    stroke="black"
+    stroke-width="1px"
+/>
 {:else if ($collar === "boat")}
 <path
     d= {collars.getCollarBoat(left, right)}

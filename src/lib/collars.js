@@ -4,6 +4,21 @@ export function getCollarCrew(left, right)
     let ly = left[1];
     let rx = right[0];
     let ry = right[1];
+    let radius = (rx - lx) / 4;
+
+    let mx = (rx + lx) / 2;
+    let my = (ry + ly) / 2 + radius;
+    let tgnt = radius / 2;
+
+    return `M ${lx},${ly} L ${lx+radius},${ly} C ${lx+radius},${ly+tgnt} ${mx-tgnt},${my} ${mx},${my} C ${mx+tgnt},${my} ${rx-radius},${ry+tgnt} ${rx-radius},${ry} L ${rx},${ry}`;
+}
+
+export function getCollarScoop(left, right)
+{
+    let lx = left[0];
+    let ly = left[1];
+    let rx = right[0];
+    let ry = right[1];
     let radius = (rx - lx) / 2;
 
     let mx = (rx + lx) / 2;
