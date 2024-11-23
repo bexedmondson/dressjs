@@ -1,12 +1,14 @@
 {
 	"name": "dressjs",
 	"version": "0.0.1",
+	"homepage": "https://bexedmondson.com/dressjs",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"deploy": "npm run build && npm gh-pages -d build -t true",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint ."
 	},
