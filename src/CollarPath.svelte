@@ -23,7 +23,7 @@
 />
 {:else if ($collar === "scoop")}
 <path
-    d= {collars.getCollar(left, right)}
+    d= {collars.getCollarScoop(left, right)}
     fill="none"
     stroke="black"
     stroke-width="1px"
