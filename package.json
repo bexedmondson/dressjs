@@ -1,17 +1,20 @@
 {
 	"name": "dressjs",
 	"version": "0.0.1",
+	"homepage": "https://bexedmondson.com/dressjs",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"deploy": "npx gh-pages -d build",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint ."
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-static": "^3.0.6",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@types/eslint": "^9.6.0",
