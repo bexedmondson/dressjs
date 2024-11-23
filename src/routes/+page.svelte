@@ -11,8 +11,8 @@
 
 <div class="all">
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<h1>build a dress</h1>
+<p>web app version of The Stitchery's video found <a href="https://www.youtube.com/watch?v=UGrWTW6buX8">found here</a></p>
 
 <div class="parent-container">
     <div class="buttoncolumn">
@@ -61,9 +61,10 @@
         width: 40%;
         display: flex;
         padding: 5%;
+        position: relative;
     }
     svg{
-        display: flex;
+        position: absolute;
     }
     :global(.optionButton){
         min-width: 50px;
