@@ -1,11 +1,11 @@
 <script>
 	import { draw } from 'svelte/transition';
     import '$lib/collars.js';
-    import CollarPath from "../CollarPath.svelte";
-    import CollarSelect from '../CollarSelect.svelte';
-    import WaistlineSelect from '../WaistlineSelect.svelte';
-    import WaistCinchSelect from '../WaistCinchSelect.svelte';
-    import WaistPath from "../WaistPath.svelte";
+    import CollarPath from "../paths/CollarPath.svelte";
+    import CollarSelect from '../selects/CollarSelect.svelte';
+    import WaistlineSelect from '../selects/WaistlineSelect.svelte';
+    import WaistCinchSelect from '../selects/WaistCinchSelect.svelte';
+    import WaistPath from "../paths/WaistPath.svelte";
     import {maxDiagramHeight, maxDiagramWidth} from "$lib/choices.js";
 </script>
 
@@ -30,7 +30,7 @@
                 stroke="none"
                 stroke-width="1px"
             />
-            <CollarPath left={[35, 10]} right={[65, 10]} />
+            <CollarPath />
             <WaistPath />
         </svg>
     </div>

@@ -7,3 +7,5 @@ export const waistCinch = writable(data.waistCinchOptions[0]);
 
 export const maxDiagramWidth = readable(100);
 export const maxDiagramHeight = readable(200);
+
+export const collarPoints = { left: [35, 10], right: [65, 10] };

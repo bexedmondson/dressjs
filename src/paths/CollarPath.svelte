@@ -1,10 +1,10 @@
 <script>
     import '$lib/collars.js';
     import * as collars from '$lib/collars.js';
-    import {collar} from "$lib/choices";
+    import {collar, collarPoints} from "$lib/choices";
 
-    export let left = [40, 10];
-    export let right = [60, 10];
+    let left = collarPoints.left;
+    let right = collarPoints.right;
 </script>
 
 {#if ($collar === "crew")}
