@@ -4,6 +4,7 @@
     import CollarPath from "../paths/CollarPath.svelte";
     import CollarSelect from '../selects/CollarSelect.svelte';
     import ShoulderPath from '../paths/ShoulderPath.svelte';
+    import TorsoPath from '../paths/TorsoPath.svelte';
     import WaistlineSelect from '../selects/WaistlineSelect.svelte';
     import WaistCinchSelect from '../selects/WaistCinchSelect.svelte';
     import WaistPath from "../paths/WaistPath.svelte";
@@ -33,6 +34,7 @@
             />
             <CollarPath />
             <ShoulderPath />
+            <TorsoPath />
             <WaistPath />
         </svg>
     </div>

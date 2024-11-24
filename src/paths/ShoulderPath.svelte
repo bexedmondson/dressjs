@@ -1,5 +1,5 @@
 <script>
-    import {collarPoints, sleevePoints} from "$lib/choices";
+    import {collarPoints, shoulderPoints} from "$lib/choices";
     import {getShoulderPathDefault} from "$lib/shoulders";
 
     let left = collarPoints.left;
@@ -8,7 +8,7 @@
 </script>
 
 <path
-    d={getShoulderPathDefault(collarPoints, sleevePoints)}
+    d={getShoulderPathDefault(collarPoints, shoulderPoints)}
     fill="none"
     stroke="black"
     stroke-width="1px"
