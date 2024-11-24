@@ -3,6 +3,7 @@
     import '$lib/collars.js';
     import CollarPath from "../paths/CollarPath.svelte";
     import CollarSelect from '../selects/CollarSelect.svelte';
+    import ShoulderPath from '../paths/ShoulderPath.svelte';
     import WaistlineSelect from '../selects/WaistlineSelect.svelte';
     import WaistCinchSelect from '../selects/WaistCinchSelect.svelte';
     import WaistPath from "../paths/WaistPath.svelte";
@@ -31,6 +32,7 @@
                 stroke-width="1px"
             />
             <CollarPath />
+            <ShoulderPath />
             <WaistPath />
         </svg>
     </div>

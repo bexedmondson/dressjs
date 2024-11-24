@@ -9,3 +9,6 @@ export const maxDiagramWidth = readable(100);
 export const maxDiagramHeight = readable(200);
 
 export const collarPoints = { left: [35, 10], right: [65, 10] };
+
+//TODO: get this from sleeve selection
+export const sleevePoints = { topLeft: [20, 12.5], topRight: [80, 12.5], bottomLeft: [32.5, 25], bottomRight: [67.5, 25] };

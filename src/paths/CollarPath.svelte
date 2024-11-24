@@ -13,6 +13,7 @@
     fill="none"
     stroke="black"
     stroke-width="1px"
+    stroke-linecap="round"
 />
 {:else if ($collar === "V")}
 <path
@@ -20,6 +21,7 @@
     fill="none"
     stroke="black"
     stroke-width="1px"
+    stroke-linecap="round"
 />
 {:else if ($collar === "scoop")}
 <path
@@ -27,6 +29,7 @@
     fill="none"
     stroke="black"
     stroke-width="1px"
+    stroke-linecap="round"
 />
 {:else if ($collar === "boat")}
 <path
@@ -34,6 +37,7 @@
     fill="none"
     stroke="black"
     stroke-width="1px"
+    stroke-linecap="round"
 />
 {:else}
 <path
@@ -41,5 +45,6 @@
     fill="none"
     stroke="black"
     stroke-width="1px"
+    stroke-linecap="round"
 />
 {/if}

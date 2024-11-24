@@ -1,0 +1,16 @@
+<script>
+    import {collarPoints, sleevePoints} from "$lib/choices";
+    import {getShoulderPathDefault} from "$lib/shoulders";
+
+    let left = collarPoints.left;
+    let right = collarPoints.right;
+
+</script>
+
+<path
+    d={getShoulderPathDefault(collarPoints, sleevePoints)}
+    fill="none"
+    stroke="black"
+    stroke-width="1px"
+    stroke-linecap="round"
+/>

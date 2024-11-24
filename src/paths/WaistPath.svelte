@@ -10,6 +10,7 @@
     fill="none"
     stroke="black"
     stroke-width="1px"
+    stroke-linecap="round"
 />
 <!--{:else}
 <path
@@ -17,5 +18,6 @@
     fill="none"
     stroke="black"
     stroke-width="1px"
+    stroke-linecap="round"
 />-->
 {/if}
