@@ -4,16 +4,17 @@ export function getCollarCrew(left, right)
     let ly = left[1];
     let rx = right[0];
     let ry = right[1];
-    let radius = (rx - lx) / 4;
+    let diameter = (rx - lx) / 2;
+    let radius = (rx - lx) / 3.5;
 
     let mx = (rx + lx) / 2;
     let my = (ry + ly) / 2 + radius;
     let tgnt = radius / 2;
 
     return `M ${lx},${ly} 
-    L ${lx+radius},${ly} 
-    C ${lx+radius},${ly+tgnt} ${mx-tgnt},${my} ${mx},${my} 
-    C ${mx+tgnt},${my} ${rx-radius},${ry+tgnt} ${rx-radius},${ry} 
+    L ${lx+(diameter-radius)},${ly} 
+    C ${lx+(diameter-radius)},${ly+tgnt} ${mx-tgnt},${my} ${mx},${my} 
+    C ${mx+tgnt},${my} ${rx-(diameter-radius)},${ry+tgnt} ${rx-(diameter-radius)},${ry} 
     L ${rx},${ry}`;
 }
 
@@ -24,14 +25,17 @@ export function getCollarScoop(left, right)
     let rx = right[0];
     let ry = right[1];
     let radius = (rx - lx) / 2;
+    let yOffset = radius * 0.2;
 
     let mx = (rx + lx) / 2;
-    let my = (ry + ly) / 2 + radius;
+    let my = (ry + ly) / 2 + radius + yOffset;
     let tgnt = radius / 2;
 
     return `M ${lx},${ly} 
-    C ${lx},${ly+tgnt} ${mx-tgnt},${my} ${mx},${my} 
-    C ${mx+tgnt},${my} ${rx},${ry+tgnt} ${rx},${ry}`;
+    L ${lx},${ly + yOffset}
+    C ${lx},${ly+yOffset+tgnt} ${mx-tgnt},${my} ${mx},${my} 
+    C ${mx+tgnt},${my} ${rx},${ry+yOffset+tgnt} ${rx},${ry+yOffset}
+    L ${rx},${ry}`;
 }
 
 export function getCollarFlat(left, right)
