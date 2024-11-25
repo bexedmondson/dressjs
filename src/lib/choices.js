@@ -1,9 +1,23 @@
 import {writable, readable} from "svelte/store";
 import * as data from "$lib/data.json"; 
 
+let initialFabricType = data.fabricTypes[0];
+export const fabricType = writable(initialFabricType);
+export const fabricStyle = writable(data.fabricStyles[initialFabricType][0]);
+export const lining = writable(data.linings[0]);
 export const collar = writable(data.collarOptions[0]);
+export const backNeckline = writable(data.backNecklines[0]);
+export const sleeveLength = writable(data.sleeveLengths[0]);
+export const sleeveShape = writable(data.sleeveShapes[0]);
+export const sleeveAddition = writable(data.sleeveAdditions[0]);
 export const waistline = writable(data.waistlineOptions[0]);
 export const waistCinch = writable(data.waistCinchOptions[0]);
+export const skirtShape = writable(data.skirtShapes[0]);
+export const skirtLength = writable(data.skirtLengths[0]);
+export const skirtExtra = writable(data.skirtExtras[0]);
+export const hemStyle = writable(data.hemStyles[0]);
+export const slits = writable(data.slitOptions[0]);
+export const pockets = writable(data.pocketOptions[0]);
 
 let maxWidth = 150.0;
 let maxHeight = 200.0;

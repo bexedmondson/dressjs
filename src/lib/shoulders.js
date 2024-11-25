@@ -18,7 +18,7 @@ export function getShoulderPathDefault(collarPoints, shoulderPoints)
     ${rightTerminal[0] + terminalTangentXOffset},${rightTerminal[1]}
     ${rightTerminal[0]},${rightTerminal[1]}`;
 
-    console.log("shoulder:\n" + path)
+    //console.log("shoulder:\n" + path)
 
     return path;
 }

@@ -39,7 +39,7 @@
     stroke-width="1px"
     stroke-linecap="round"
 />
-{:else}
+{:else if ($collar === "flat")}
 <path
     d= {collars.getCollarFlat(left, right)}
     fill="none"

@@ -1,20 +1,157 @@
 {
+    "fabricTypes":
+    [
+        "knit",
+        "woven"
+    ],
+    "fabricStyles":
+    {
+        "knit":
+        [
+            "bulky",
+            "slippery",
+            "sturdy",
+            "thin",
+            "lacy"
+        ],
+        "woven":
+        [
+            "heavy",
+            "medium",
+            "silky",
+            "sheer"
+        ]
+    },
+    "linings":
+    [
+        "none",
+        "attached",
+        "detached"
+    ],
     "collarOptions":
     [
         "boat",
         "crew",
         "flat",
         "scoop",
-        "V"
+        "V",
+        "V with lacing",
+        "square",
+        "square sweetheart",
+        "keyhole",
+        "turtleneck",
+        "tied"
+    ],
+    "backNecklines":
+    [
+        "neutral",
+        "V",
+        "scoop",
+        "crew",
+        "boat",
+        "low with ties",
+        "square",
+        "keyhole"
+    ],
+    "sleeveLengths":
+    [
+        "long",
+        "3/4",
+        "above elbow",
+        "short",
+        "drop",
+        "none"
+    ],
+    "sleeveShapes":
+    [
+        "straight",
+        "bell",
+        "trumpet",
+        "bishop",
+        "gathered"
+    ],
+    "sleeveAdditions":
+    [
+        "none",
+        "flounce",
+        "ruffle",
+        "turned up cuff",
+        "band cuff",
+        "elastic cuff",
+        "shirred cuff"
     ],
     "waistlineOptions":
     [
+        "empire",
         "high",
         "natural",
-        "low"
+        "low",
+        "double",
+        "none"
     ],
     "waistCinchOptions":
     [
-        "thin elastic"
+        "thin elastic",
+        "wide elastic",
+        "shirring",
+        "drawstring",
+        "separate sash",
+        "sewn in sash (1 piece)",
+        "sewn in sash (2 pieces)",
+        "sewn in sash (4 pieces)",
+        "lacing"
+    ],
+    "skirtShapes":
+    [
+        "straight",
+        "flared",
+        "pencil",
+        "trumpet",
+        "tiered",
+        "godets",
+        "circle",
+        "gathered",
+        "pleated"
+    ],
+    "skirtLengths":
+    [
+        "mini",
+        "above knee",
+        "knee length",
+        "midi",
+        "tea",
+        "maxi",
+        "floor"
+    ],
+    "hemStyles":
+    [
+        "straight",
+        "high-low",
+        "asymmetrical",
+        "handkerchief"
+    ],
+    "slitOptions":
+    [
+        "none",
+        "side",
+        "double side",
+        "back",
+        "front"
+    ],
+    "skirtExtras":
+    [
+        "none",
+        "ruffle",
+        "flounce"
+    ],
+    "pocketOptions":
+    [
+        "none",
+        "side seam long",
+        "side seam bag",
+        "patch square",
+        "patch creative",
+        "welt",
+        "cutout"
     ]
 }

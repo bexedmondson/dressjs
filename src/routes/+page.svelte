@@ -9,6 +9,19 @@
     import WaistCinchSelect from '../selects/WaistCinchSelect.svelte';
     import WaistPath from "../paths/WaistPath.svelte";
     import {maxDiagramHeight, maxDiagramWidth} from "$lib/choices.js";
+    import FabricTypeSelect from '../selects/FabricTypeSelect.svelte';
+    import FabricStyleSelect from '../selects/FabricStyleSelect.svelte';
+    import LiningSelect from '../selects/LiningSelect.svelte';
+    import BackNecklineSelect from '../selects/BackNecklineSelect.svelte';
+    import SleeveLengthSelect from '../selects/SleeveLengthSelect.svelte';
+    import SleeveShapeSelect from '../selects/SleeveShapeSelect.svelte';
+    import SleeveAdditionSelect from '../selects/SleeveAdditionSelect.svelte';
+    import SkirtShapeSelect from '../selects/SkirtShapeSelect.svelte';
+    import SkirtLengthSelect from '../selects/SkirtLengthSelect.svelte';
+    import SkirtExtrasSelect from '../selects/SkirtExtrasSelect.svelte';
+    import HemStyleSelect from '../selects/HemStyleSelect.svelte';
+    import SlitOptionSelect from '../selects/SlitOptionSelect.svelte';
+    import PocketSelect from '../selects/PocketSelect.svelte';
 </script>
 
 <div class="all">
@@ -19,9 +32,22 @@
 <div class="parent-container">
     <div class="buttoncolumn">
         <div class="buttonscroll">
+            <FabricTypeSelect></FabricTypeSelect>
+            <FabricStyleSelect></FabricStyleSelect>
+            <LiningSelect></LiningSelect>
             <CollarSelect></CollarSelect>
+            <BackNecklineSelect></BackNecklineSelect>
+            <SleeveLengthSelect></SleeveLengthSelect>
+            <SleeveShapeSelect></SleeveShapeSelect>
+            <SleeveAdditionSelect></SleeveAdditionSelect>
             <WaistlineSelect></WaistlineSelect>
             <WaistCinchSelect></WaistCinchSelect>
+            <SkirtShapeSelect></SkirtShapeSelect>
+            <SkirtLengthSelect></SkirtLengthSelect>
+            <SkirtExtrasSelect></SkirtExtrasSelect>
+            <HemStyleSelect></HemStyleSelect>
+            <SlitOptionSelect></SlitOptionSelect>
+            <PocketSelect></PocketSelect>
         </div>
     </div>
 
