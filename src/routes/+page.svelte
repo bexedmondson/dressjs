@@ -18,20 +18,22 @@
 
 <div class="parent-container">
     <div class="buttoncolumn">
-        <CollarSelect></CollarSelect>
-        <WaistlineSelect></WaistlineSelect>
-        <WaistCinchSelect></WaistCinchSelect>
+        <div class="buttonscroll">
+            <CollarSelect></CollarSelect>
+            <WaistlineSelect></WaistlineSelect>
+            <WaistCinchSelect></WaistCinchSelect>
+        </div>
     </div>
 
     <div class="diagram">
         <svg viewBox="0 0 {$maxDiagramWidth} {$maxDiagramHeight}" preserveAspectRatio="meet" xmlns="http://www.w3.org/2000/svg">
             <!--to establish overall size of diagram-->
-            <path
+            <!--path
                 d="M 0,0 L 0,200 L 100,200"
                 fill="none"
-                stroke="none"
+                stroke="white"
                 stroke-width="1px"
-            />
+            /-->
             <CollarPath />
             <ShoulderPath />
             <TorsoPath />
@@ -45,32 +47,67 @@
 
 <style>
     .all{
-        position: absolute;
-        height:100%;
-        width: 100%;
+        position: relative;
         display: flex;
         flex-direction: column;
+        padding: 2% 2% 2% 2%;
+        width: 90vw;
+        height: 94vh;
     }
     .parent-container{
         display: flex;
+        flex: 2;
+        flex-direction: row;
         justify-content: center;
+        align-content:start;
         gap: 1rem;
-        flex-grow: 4;
+        height: 100%;
 	}
 	.buttoncolumn{
-        width: 40%;
-        display: block;
+        padding: 0% 5%;
+        flex:1;
+        height: 100%;
+        max-height: 100%;
+	}
+    .buttonscroll{
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
 	}
     .diagram{
-        width: 40%;
-        display: flex;
-        padding: 5%;
+        padding: 0% 5%;
+        flex:1;
         position: relative;
+        max-width: 100%;
+        max-height: 100%;
     }
     svg{
         position: absolute;
+        width: 100%;
+        height: 100%;
     }
+
+    @media (orientation: portrait) {
+        .parent-container {
+            justify-content: inherit;
+            align-content: center;
+            flex-direction: column;
+            height: auto;
+        }
+        .diagram {
+            min-height: 50vh;
+        }
+    }
+
     :global(.optionButton){
         min-width: 50px;
+    }
+    :global(html) {
+        height: 100vh;
+    }
+    :global(body) {
+        height: calc(100vh - 16px);
     }
 </style>
