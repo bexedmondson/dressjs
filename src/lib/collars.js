@@ -53,7 +53,7 @@ export function getCollarV(left, right)
     let radius = (rx - lx) / 2;
 
     let mx = (rx + lx) / 2;
-    let my = (ry + ly) / 2 + radius;
+    let my = (ry + ly) / 2 + radius * 1.2;
 
     return `M ${lx},${ly} 
     L ${mx},${my} 
