@@ -1,0 +1,531 @@
+{
+    "fabricTypes":
+    {
+        "knit":
+        {
+
+        },
+        "woven":
+        {
+
+        }
+    },
+    "fabricStyles":
+    {
+        "knit":
+        {
+            "bulky":
+            {
+    
+            },
+            "slippery":
+            {
+    
+            },
+            "sturdy":
+            {
+    
+            },
+            "thin":
+            {
+    
+            },
+            "lacy":
+            {
+
+            }
+        },
+        "woven":
+        {
+            "heavy":
+            {
+    
+            },
+            "medium":
+            {
+    
+            },
+            "silky":
+            {
+    
+            },
+            "sheer":
+            {
+
+            }
+        }
+    },
+    "linings":
+    {
+        "none":
+        {
+
+        },
+        "attached":
+        {
+
+        },
+        "detached":
+        {
+
+        }
+    },
+    "collarOptions":
+    {
+        "boat":
+        {
+
+        },
+        "crew":
+        {
+            "fabricTypes":
+            [
+                "woven"
+            ]
+        },
+        "flat":
+        {
+
+        },
+        "scoop":
+        {
+
+        },
+        "V":
+        {
+
+        },
+        "V with lacing":
+        {
+
+        },
+        "square":
+        {
+
+        },
+        "square sweetheart":
+        {
+
+        },
+        "keyhole":
+        {
+
+        },
+        "turtleneck":
+        {
+            "fabricTypes":
+            [
+                "woven"
+            ]
+        },
+        "tied":
+        {
+
+        }
+    },
+    "backNecklines":
+    {
+        "neutral":
+        {
+            "collarOptions":
+            [
+                "crew",
+                "turtleneck"
+            ]
+        },
+        "V":
+        {
+            "collarOptions":
+            [
+                "turtleneck"
+            ]
+        },
+        "scoop":
+        {
+            "collarOptions":
+            [
+                "turtleneck"
+            ]
+        },
+        "crew":
+        {
+            "collarOptions":
+            [
+                "turtleneck"
+            ]
+        },
+        "boat":
+        {
+            "collarOptions":
+            [
+                "turtleneck"
+            ]
+        },
+        "low with ties":
+        {
+            "collarOptions":
+            [
+                "turtleneck"
+            ]
+        },
+        "square":
+        {
+            "collarOptions":
+            [
+                "turtleneck"
+            ]
+        },
+        "keyhole":
+        {
+            "collarOptions":
+            [
+                "turtleneck"
+            ]
+        }
+    },
+    "sleeveLengths":
+    {
+        "long":
+        {
+
+        },
+        "3/4":
+        {
+
+        },
+        "above elbow":
+        {
+
+        },
+        "short":
+        {
+
+        },
+        "drop":
+        {
+
+        },
+        "none":
+        {
+
+        }
+    },
+    "sleeveShapes":
+    {
+        "straight":
+        {
+            "sleeveLengths":
+            [
+                "none"
+            ]
+        },
+        "bell":
+        {
+
+            "sleeveLengths":
+            [
+                "none"
+            ]
+        },
+        "trumpet":
+        {
+
+            "sleeveLengths":
+            [
+                "none"
+            ]
+        },
+        "bishop":
+        {
+
+            "sleeveLengths":
+            [
+                "none"
+            ]
+        },
+        "gathered":
+        {
+
+            "sleeveLengths":
+            [
+                "none"
+            ]
+        }
+    },
+    "sleeveAdditions":
+    {
+        "none":
+        {
+
+        },
+        "flounce":
+        {
+            "sleeveLengths":
+            [
+                "none"
+            ]
+        },
+        "ruffle":
+        {
+            "sleeveLengths":
+            [
+                "none"
+            ]
+        },
+        "turned up cuff":
+        {
+            "sleeveLengths":
+            [
+                "none"
+            ]
+        },
+        "band cuff":
+        {
+            "sleeveLengths":
+            [
+                "none"
+            ]
+        },
+        "elastic cuff":
+        {
+            "sleeveLengths":
+            [
+                "none"
+            ]
+        },
+        "shirred cuff":
+        {
+            "sleeveLengths":
+            [
+                "none"
+            ]
+        }
+    },
+    "waistlineOptions":
+    {
+        "empire":
+        {
+
+        },
+        "high":
+        {
+
+        },
+        "natural":
+        {
+
+        },
+        "low":
+        {
+
+        },
+        "double":
+        {
+
+        },
+        "none":
+        {
+
+        }
+    },
+    "waistCinchOptions":
+    {
+        "thin elastic":
+        {
+
+        },
+        "wide elastic":
+        {
+
+        },
+        "shirring":
+        {
+
+        },
+        "drawstring":
+        {
+
+        },
+        "separate sash":
+        {
+
+        },
+        "sewn in sash (1 piece)":
+        {
+
+        },
+        "sewn in sash (2 pieces)":
+        {
+
+        },
+        "sewn in sash (4 pieces)":
+        {
+
+        },
+        "lacing":
+        {
+
+        }
+    },
+    "skirtShapes":
+    {
+        "straight":
+        {
+
+        },
+        "flared":
+        {
+
+        },
+        "pencil":
+        {
+            "fabricTypes":
+            [
+                "woven"
+            ]
+        },
+        "trumpet":
+        {
+
+        },
+        "tiered":
+        {
+
+        },
+        "godets":
+        {
+
+        },
+        "circle":
+        {
+
+        },
+        "gathered":
+        {
+
+        },
+        "pleated":
+        {
+
+        }
+    },
+    "skirtLengths":
+    {
+        "mini":
+        {
+
+        },
+        "above knee":
+        {
+
+        },
+        "knee length":
+        {
+
+        },
+        "midi":
+        {
+
+        },
+        "tea":
+        {
+
+        },
+        "maxi":
+        {
+
+        },
+        "floor":
+        {
+
+        }
+    },
+    "hemStyles":
+    {
+        "straight":
+        {
+
+        },
+        "high-low":
+        {
+
+        },
+        "asymmetrical":
+        {
+
+        },
+        "handkerchief":
+        {
+
+        }
+    },
+    "slitOptions":
+    {
+        "none":
+        {
+
+        },
+        "side":
+        {
+
+        },
+        "double side":
+        {
+
+        },
+        "back":
+        {
+
+        },
+        "front":
+        {
+
+        }
+    },
+    "skirtExtras":
+    {
+        "none":
+        {
+
+        },
+        "ruffle":
+        {
+
+        },
+        "flounce":
+        {
+
+        }
+    },
+    "pocketOptions":
+    {
+        "none":
+        {
+
+        },
+        "side seam long":
+        {
+
+        },
+        "side seam bag":
+        {
+
+        },
+        "patch square":
+        {
+
+        },
+        "patch creative":
+        {
+
+        },
+        "welt":
+        {
+
+        },
+        "cutout":
+        {
+
+        }
+    }
+}
