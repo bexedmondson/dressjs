@@ -1,4 +1,4 @@
-import {writable, readable} from "svelte/store";
+import {get, writable, readable} from "svelte/store";
 import * as data from "$lib/data.json"; 
 import * as restrictions from "$lib/restrictions.json";
 
@@ -22,22 +22,22 @@ export const pockets = writable(data.pocketOptions[0]);
 
 let map = 
 {
-    "fabricTypes": "fabricType",
-    "fabricStyles": "fabricStyle",
-    "linings": "lining",
-    "collarOptions": "collar",
-    "backNecklines": "backNeckline",
-    "sleeveLengths": "sleeveLength",
-    "sleeveShapes": "sleeveShape",
-    "sleeveAdditions": "sleeveAddition",
-    "waistlineOptions": "waistline",
-    "waistCinchOptions": "waistCinch",
-    "skirtShapes": "skirtShape",
-    "skirtLengths": "skirtLength",
-    "skirtExtras": "skirtExtra",
-    "hemStyles": "hemStyle",
-    "slitOptions": "slits",
-    "pocketOptions": "pockets"
+    "fabricTypes": get(fabricType),
+    "fabricStyles": (fabricStyle),
+    "linings": get(lining),
+    "collarOptions": get(collar),
+    "backNecklines": get(backNeckline),
+    "sleeveLengths": get(sleeveLength),
+    "sleeveShapes": get(sleeveShape),
+    "sleeveAdditions": get(sleeveAddition),
+    "waistlineOptions": get(waistline),
+    "waistCinchOptions": get(waistCinch),
+    "skirtShapes": get(skirtShape),
+    "skirtLengths": get(skirtLength),
+    "skirtExtras": get(skirtExtra),
+    "hemStyles": get(hemStyle),
+    "slitOptions": get(slits),
+    "pocketOptions": get(pockets)
 }
 
 let maxWidth = 150.0;
@@ -55,10 +55,10 @@ export const shoulderPoints = { left: [maxWidth * 0.2, 7.5], right: [maxWidth * 
 export function isDisabled(category, selection)
 {
     Object.entries(map).forEach(choiceCategory => {
-        if (choiceCategory in restrictions[category][selection])
+        if (choiceCategory[0] in restrictions[category][selection])
         {
-            restrictions[category][selection][choiceCategory].forEach(restriction => {
-                if (map[choiceCategory] === restriction)
+            restrictions[category][selection][choiceCategory[0]].forEach(restriction => {
+                if (map[choiceCategory[0]] === restriction)
                     return true;
             });
         }
