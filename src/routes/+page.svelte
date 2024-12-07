@@ -8,7 +8,7 @@
     import WaistlineSelect from '../selects/WaistlineSelect.svelte';
     import WaistCinchSelect from '../selects/WaistCinchSelect.svelte';
     import WaistPath from "../paths/WaistPath.svelte";
-    import {maxDiagramHeight, maxDiagramWidth} from "$lib/choices.js";
+    import {selections, maxDiagramHeight, maxDiagramWidth} from "$lib/choices.js";
     import FabricTypeSelect from '../selects/FabricTypeSelect.svelte';
     import FabricStyleSelect from '../selects/FabricStyleSelect.svelte';
     import LiningSelect from '../selects/LiningSelect.svelte';
@@ -35,7 +35,7 @@
             <FabricTypeSelect></FabricTypeSelect>
             <FabricStyleSelect></FabricStyleSelect>
             <LiningSelect></LiningSelect>
-            <CollarSelect></CollarSelect>
+            <CollarSelect bind:$selections></CollarSelect>
             <BackNecklineSelect></BackNecklineSelect>
             <SleeveLengthSelect></SleeveLengthSelect>
             <SleeveShapeSelect></SleeveShapeSelect>

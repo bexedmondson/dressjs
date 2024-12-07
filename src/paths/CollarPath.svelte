@@ -1,13 +1,13 @@
 <script>
     import '$lib/collars.js';
     import * as collars from '$lib/collars.js';
-    import {collar, collarPoints} from "$lib/choices";
+    import {selections, collarPoints} from "$lib/choices";
 
     let left = collarPoints.left;
     let right = collarPoints.right;
 </script>
 
-{#if ($collar === "crew")}
+{#if ($selections.collar === "crew")}
 <path
     d= {collars.getCollarCrew(left, right)}
     fill="none"
@@ -15,7 +15,7 @@
     stroke-width="1px"
     stroke-linecap="round"
 />
-{:else if ($collar === "V")}
+{:else if ($selections.collar === "V")}
 <path
     d= {collars.getCollarV(left, right)}
     fill="none"
@@ -23,7 +23,7 @@
     stroke-width="1px"
     stroke-linecap="round"
 />
-{:else if ($collar === "scoop")}
+{:else if ($selections.collar === "scoop")}
 <path
     d= {collars.getCollarScoop(left, right)}
     fill="none"
@@ -31,7 +31,7 @@
     stroke-width="1px"
     stroke-linecap="round"
 />
-{:else if ($collar === "boat")}
+{:else if ($selections.collar === "boat")}
 <path
     d= {collars.getCollarBoat(left, right)}
     fill="none"
@@ -39,7 +39,7 @@
     stroke-width="1px"
     stroke-linecap="round"
 />
-{:else if ($collar === "flat")}
+{:else if ($selections.collar === "flat")}
 <path
     d= {collars.getCollarFlat(left, right)}
     fill="none"

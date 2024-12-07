@@ -1,6 +1,6 @@
 <script>
     import {fabricTypes} from "$lib/data.json";
-    import {fabricType} from "$lib/choices.js";
+    import {selections} from "$lib/choices.js";
 </script>
 
 <h2>Fabric Type</h2>
@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={fabric}
-        style={($fabricType === fabric) ? 'border-color: deepskyblue' : ''}
-        onclick={() => $fabricType = fabric}
+        style={($selections.fabricType === fabric) ? 'border-color: deepskyblue' : ''}
+        onclick={() => $selections.fabricType = fabric}
     >{fabric}</button>
     {/each}
 </div>

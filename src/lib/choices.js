@@ -1,9 +1,29 @@
-import {get, writable, readable} from "svelte/store";
+import {get, derived, writable, readable} from "svelte/store";
 import * as data from "$lib/data.json"; 
 import * as restrictions from "$lib/restrictions.json";
 
 let initialFabricType = data.fabricTypes[0];
-export const fabricType = writable(initialFabricType);
+export const selections = writable({
+        fabricType: initialFabricType,
+        fabricStyle: data.fabricStyles[initialFabricType][0],
+        lining: data.linings[0],
+        collar: data.collarOptions[0],
+        backNeckline: data.backNecklines[0],
+        sleeveLength: data.sleeveLengths[0],
+        sleeveShape: data.sleeveShapes[0],
+        sleeveAddition: data.sleeveAdditions[0],
+        waistline: data.waistlineOptions[0],
+        waistCinch: data.waistCinchOptions[0],
+        skirtShape: data.skirtShapes[0],
+        skirtLength: data.skirtLengths[0],
+        skirtExtra: data.skirtExtras[0],
+        hemStyles: data.hemStyles[0],
+        slits: data.slitOptions[0],
+        pockets: data.pocketOptions[0]
+    }
+)
+
+export const fabricType = derived(selections, ($selections) => $selections.fabricType);
 export const fabricStyle = writable(data.fabricStyles[initialFabricType][0]);
 export const lining = writable(data.linings[0]);
 export const collar = writable(data.collarOptions[0]);
@@ -20,25 +40,28 @@ export const hemStyle = writable(data.hemStyles[0]);
 export const slits = writable(data.slitOptions[0]);
 export const pockets = writable(data.pocketOptions[0]);
 
-let map = 
-{
-    "fabricTypes": get(fabricType),
-    "fabricStyles": (fabricStyle),
-    "linings": get(lining),
-    "collarOptions": get(collar),
-    "backNecklines": get(backNeckline),
-    "sleeveLengths": get(sleeveLength),
-    "sleeveShapes": get(sleeveShape),
-    "sleeveAdditions": get(sleeveAddition),
-    "waistlineOptions": get(waistline),
-    "waistCinchOptions": get(waistCinch),
-    "skirtShapes": get(skirtShape),
-    "skirtLengths": get(skirtLength),
-    "skirtExtras": get(skirtExtra),
-    "hemStyles": get(hemStyle),
-    "slitOptions": get(slits),
-    "pocketOptions": get(pockets)
-}
+const map = derived(selections, ($selections) => 
+    { 
+        return {
+            "fabricTypes": $selections.fabricType,
+            "fabricStyles": (fabricStyle),
+            "linings": get(lining),
+            "collarOptions": get(collar),
+            "backNecklines": get(backNeckline),
+            "sleeveLengths": get(sleeveLength),
+            "sleeveShapes": get(sleeveShape),
+            "sleeveAdditions": get(sleeveAddition),
+            "waistlineOptions": get(waistline),
+            "waistCinchOptions": get(waistCinch),
+            "skirtShapes": get(skirtShape),
+            "skirtLengths": get(skirtLength),
+            "skirtExtras": get(skirtExtra),
+            "hemStyles": get(hemStyle),
+            "slitOptions": get(slits),
+            "pocketOptions": get(pockets)
+        };
+    }
+);
 
 let maxWidth = 150.0;
 let maxHeight = 200.0;
@@ -54,12 +77,24 @@ export const shoulderPoints = { left: [maxWidth * 0.2, 7.5], right: [maxWidth * 
 
 export function isDisabled(category, selection)
 {
-    Object.entries(map).forEach(choiceCategory => {
+    let lmap = get(map);
+    console.log(selection);
+    Object.entries(lmap).forEach(choiceCategory => {
         if (choiceCategory[0] in restrictions[category][selection])
         {
+            console.log("checking choiceCategory " + choiceCategory[0]);
+            console.log(restrictions[category][selection][choiceCategory[0]]);
             restrictions[category][selection][choiceCategory[0]].forEach(restriction => {
-                if (map[choiceCategory[0]] === restriction)
+                console.log("comparing");
+                console.log(lmap[choiceCategory[0]]);
+                console.log("and");
+                console.log(restriction);
+                console.log(lmap[choiceCategory[0]] === restriction);
+                if (lmap[choiceCategory[0]] === restriction)
+                {
+                    console.log("returning true");
                     return true;
+                }
             });
         }
     });

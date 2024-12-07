@@ -1,11 +1,11 @@
 <script>
     import {fabricStyles} from "$lib/data.json";
-    import {fabricType, fabricStyle} from "$lib/choices.js";
+    import {selections, fabricStyle} from "$lib/choices.js";
 </script>
 
 <h2>Fabric Style</h2>
 <div class="buttoncontainer">
-    {#each fabricStyles[$fabricType] as style}
+    {#each fabricStyles[$selections.fabricType] as style}
     <button
         class="optionButton"
         aria-label={style}

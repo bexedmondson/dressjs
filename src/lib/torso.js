@@ -20,7 +20,7 @@ export function getTorsoSidesPath(shoulderPoints, waistPoints)
     ${rightTerminal[0] + terminalTangentXOffset},${rightTerminal[1] - terminalTangentYOffset}
     ${rightTerminal[0]},${rightTerminal[1]}`;
 
-    console.log(path);
+    //console.log(path);
 
     return path;
 }
