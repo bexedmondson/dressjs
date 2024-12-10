@@ -1,12 +1,12 @@
 <script>
     import '$lib/waist.js';
     import * as waist from '$lib/waist.js';
-    import {waistline, waistCinch, maxDiagramHeight, maxDiagramWidth} from "$lib/choices.svelte";
+    import {selections, maxDiagramHeight, maxDiagramWidth} from "$lib/choices.svelte";
 </script>
 
-{#if ($waistCinch === "thin elastic")}
+{#if (selections.waistCinch === "thin elastic")}
 <path
-    d= {waist.getWaistCinchThinElastic($maxDiagramWidth, $maxDiagramHeight, $waistline)}
+    d= {waist.getWaistCinchThinElastic(maxDiagramWidth, maxDiagramHeight, selections.waistline)}
     fill="none"
     stroke="black"
     stroke-width="1px"

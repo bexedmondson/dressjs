@@ -1,6 +1,6 @@
 <script>
     import {hemStyles} from "$lib/data.json";
-    import {hemStyle} from "$lib/choices.svelte.js";
+    import {selections} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Hem Style</h2>
@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={hemStyleOption}
-        style={($hemStyle === hemStyleOption) ? 'border-color: deepskyblue' : ''}
-        onclick={() => $hemStyle = hemStyleOption}
+        style={(selections.hemStyle === hemStyleOption) ? 'border-color: deepskyblue' : ''}
+        onclick={() => selections.hemStyle = hemStyleOption}
     >{hemStyleOption}</button>
     {/each}
 </div>

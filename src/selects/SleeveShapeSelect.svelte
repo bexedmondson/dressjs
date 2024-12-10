@@ -1,6 +1,6 @@
 <script>
     import {sleeveShapes} from "$lib/data.json";
-    import {sleeveShape} from "$lib/choices.svelte.js";
+    import {selections} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Sleeve Shape</h2>
@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={sleeveShapeOption}
-        style={($sleeveShape === sleeveShapeOption) ? 'border-color: deepskyblue' : ''}
-        onclick={() => $sleeveShape = sleeveShapeOption}
+        style={(selections.sleeveShape === sleeveShapeOption) ? 'border-color: deepskyblue' : ''}
+        onclick={() => selections.sleeveShape = sleeveShapeOption}
     >{sleeveShapeOption}</button>
     {/each}
 </div>

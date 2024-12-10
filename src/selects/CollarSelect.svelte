@@ -1,16 +1,15 @@
 <script>
     import {collarOptions} from "$lib/data.json";
     import {selections, isDisabled} from "$lib/choices.svelte.js";
-    import { derived } from 'svelte/store';
+    import {derived} from 'svelte/store';
 
     let indexedCollarOptions = $derived.by(() => {
             let opts = [];
-            $selections;
             let i = 0;
             collarOptions.forEach(collarOption => {
                 opts.push(
                     {
-                        id: i, 
+                        id: i,
                         name: collarOption,
                         disabled: isDisabled("collarOptions", collarOption)
                     }
@@ -22,6 +21,7 @@
             return opts;
         }
     );
+	//$inspect(indexedCollarOptions).with(console.trace) 
 </script>
 
 <h2>Collar</h2>
@@ -31,8 +31,8 @@
             class="optionButton"
             aria-label={indexedCollarOption["name"]}
             disabled={indexedCollarOptions[indexedCollarOption.id].disabled}
-            style={($selections.collar === indexedCollarOption["name"]) ? 'border-color: deepskyblue' : ''}
-            onclick={() => $selections.collar = indexedCollarOption["name"]}
+            style={(selections.collar === indexedCollarOption["name"]) ? 'border-color: deepskyblue' : ''}
+            onclick={() => selections.collar = indexedCollarOption["name"]}
         >{indexedCollarOption.name}</button>
     {/each}
 </div>

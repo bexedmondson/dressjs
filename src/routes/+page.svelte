@@ -52,7 +52,7 @@
     </div>
 
     <div class="diagram">
-        <svg viewBox="0 0 {$maxDiagramWidth} {$maxDiagramHeight}" preserveAspectRatio="meet" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 {maxDiagramWidth} {maxDiagramHeight}" preserveAspectRatio="meet" xmlns="http://www.w3.org/2000/svg">
             <!--to establish overall size of diagram-->
             <!--path
                 d="M 0,0 L 0,200 L 100,200"

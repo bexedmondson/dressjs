@@ -1,8 +1,8 @@
 export function getTorsoSidesPath(shoulderPoints, waistPoints)
 {
-    let leftOrigin = shoulderPoints.left;
+    let leftOrigin = shoulderPoints().left;
     let leftTerminal = [waistPoints.x0, waistPoints.y0];
-    let rightOrigin = shoulderPoints.right;
+    let rightOrigin = shoulderPoints().right;
     let rightTerminal = [waistPoints.x1, waistPoints.y1];
 
     let originTangentXOffset = 0;

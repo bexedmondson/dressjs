@@ -1,6 +1,6 @@
 <script>
     import {sleeveLengths} from "$lib/data.json";
-    import {sleeveLength} from "$lib/choices.svelte.js";
+    import {selections} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Sleeve Length</h2>
@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={sleeveLengthOption}
-        style={($sleeveLength === sleeveLengthOption) ? 'border-color: deepskyblue' : ''}
-        onclick={() => $sleeveLength = sleeveLengthOption}
+        style={(selections.sleeveLength === sleeveLengthOption) ? 'border-color: deepskyblue' : ''}
+        onclick={() => selections.sleeveLength = sleeveLengthOption}
     >{sleeveLengthOption}</button>
     {/each}
 </div>

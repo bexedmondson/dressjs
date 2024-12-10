@@ -1,12 +1,12 @@
 <script>
-    import {shoulderPoints, waistline, waistCinch, maxDiagramHeight, maxDiagramWidth} from "$lib/choices.svelte";
+    import {shoulderPoints, selections, maxDiagramHeight, maxDiagramWidth} from "$lib/choices.svelte";
     import {getTorsoSidesPath} from "$lib/torso.js";
     import {getWaistPoints} from "$lib/waist.js";
 </script>
 
 <path
-    d= {getTorsoSidesPath(shoulderPoints, getWaistPoints($maxDiagramWidth, $maxDiagramHeight, $waistline))}
-    fill="none"
+    d= {getTorsoSidesPath(shoulderPoints, getWaistPoints(maxDiagramWidth, maxDiagramHeight, selections.waistline))}
+    fill="none" 
     stroke="black"
     stroke-width="1px"
     stroke-linecap="round"

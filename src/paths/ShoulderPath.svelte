@@ -2,8 +2,8 @@
     import {collarPoints, shoulderPoints} from "$lib/choices.svelte";
     import {getShoulderPathDefault} from "$lib/shoulders";
 
-    let left = collarPoints.left;
-    let right = collarPoints.right;
+    let left = collarPoints().left;
+    let right = collarPoints().right;
 
 </script>
 

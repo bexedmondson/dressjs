@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={fabric}
-        style={($selections.fabricType === fabric) ? 'border-color: deepskyblue' : ''}
-        onclick={() => $selections.fabricType = fabric}
+        style={(selections.fabricType === fabric) ? 'border-color: deepskyblue' : ''}
+        onclick={() => selections.fabricType = fabric}
     >{fabric}</button>
     {/each}
 </div>

@@ -1,6 +1,6 @@
 <script>
     import {pocketOptions} from "$lib/data.json";
-    import {pockets} from "$lib/choices.svelte.js";
+    import {selections} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Pockets</h2>
@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={pocketOption}
-        style={($pockets === pocketOption) ? 'border-color: deepskyblue' : ''}
-        onclick={() => $pockets = pocketOption}
+        style={(selections.pockets === pocketOption) ? 'border-color: deepskyblue' : ''}
+        onclick={() => selections.pockets = pocketOption}
     >{pocketOption}</button>
     {/each}
 </div>

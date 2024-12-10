@@ -1,9 +1,9 @@
 export function getShoulderPathDefault(collarPoints, shoulderPoints)
 {
-    let leftOrigin = shoulderPoints.left;
-    let leftTerminal = collarPoints.left;
-    let rightOrigin = shoulderPoints.right;
-    let rightTerminal = collarPoints.right;
+    let leftOrigin = shoulderPoints().left;
+    let leftTerminal = collarPoints().left;
+    let rightOrigin = shoulderPoints().right;
+    let rightTerminal = collarPoints().right;
 
     let terminalTangentXOffset = (leftTerminal[0] - leftOrigin[0]) / 2.0;
     let originTangentOffset = (leftOrigin[1] - leftTerminal[1]) * 0.6;
