@@ -35,7 +35,7 @@
             <FabricTypeSelect></FabricTypeSelect>
             <FabricStyleSelect></FabricStyleSelect>
             <LiningSelect></LiningSelect>
-            <CollarSelect bind:$selections></CollarSelect>
+            <CollarSelect></CollarSelect>
             <BackNecklineSelect></BackNecklineSelect>
             <SleeveLengthSelect></SleeveLengthSelect>
             <SleeveShapeSelect></SleeveShapeSelect>

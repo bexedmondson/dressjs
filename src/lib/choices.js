@@ -44,7 +44,7 @@ const map = derived(selections, ($selections) =>
     { 
         return {
             "fabricTypes": $selections.fabricType,
-            "fabricStyles": (fabricStyle),
+            "fabricStyles": get(fabricStyle),
             "linings": get(lining),
             "collarOptions": get(collar),
             "backNecklines": get(backNeckline),
@@ -78,18 +78,15 @@ export const shoulderPoints = { left: [maxWidth * 0.2, 7.5], right: [maxWidth * 
 export function isDisabled(category, selection)
 {
     let lmap = get(map);
-    console.log(selection);
+    //console.log(selection);
     Object.entries(lmap).forEach(choiceCategory => {
         if (choiceCategory[0] in restrictions[category][selection])
         {
-            console.log("checking choiceCategory " + choiceCategory[0]);
-            console.log(restrictions[category][selection][choiceCategory[0]]);
+            //console.log("checking choiceCategory " + choiceCategory[0]);
+            //console.log(restrictions[category][selection][choiceCategory[0]]);
             restrictions[category][selection][choiceCategory[0]].forEach(restriction => {
-                console.log("comparing");
-                console.log(lmap[choiceCategory[0]]);
-                console.log("and");
-                console.log(restriction);
-                console.log(lmap[choiceCategory[0]] === restriction);
+                //console.log("comparing " + lmap[choiceCategory[0]] + " and " + restriction);
+                //console.log(lmap[choiceCategory[0]] === restriction);
                 if (lmap[choiceCategory[0]] === restriction)
                 {
                     console.log("returning true");

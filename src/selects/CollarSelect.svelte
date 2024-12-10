@@ -1,55 +1,40 @@
 <script>
     import {collarOptions} from "$lib/data.json";
     import {selections, isDisabled} from "$lib/choices.js";
-    import { writable } from 'svelte/store';
+    import { derived } from 'svelte/store';
 
-    let indexedCollarOptions = writable([]);
-    let i = 0;
-    collarOptions.forEach(collarOption => {
-        $indexedCollarOptions.push(
-            {
-                id: i, 
-                name: collarOption,
-                disabled: getIsDisabled(collarOption)
-            }
-        );
-        i++;
-    });
+    let indexedCollarOptions = $derived.by(() => {
+            let opts = [];
+            $selections;
+            let i = 0;
+            collarOptions.forEach(collarOption => {
+                opts.push(
+                    {
+                        id: i, 
+                        name: collarOption,
+                        disabled: isDisabled("collarOptions", collarOption)
+                    }
+                );
+                i++;
+            });
+            console.log(opts);
 
-    $selections.subscribe((subs) => {
-        for (let i = 0; i < $indexedCollarOptions.length; i++) {
-            var d = isDisabled("collarOptions", $indexedCollarOptions[i].name);
-            console.log($indexedCollarOptions[i].name + " " + d);
-            $indexedCollarOptions[i].disabled = d;
-        };
-
-        /*$indexedCollarOptions.forEach(indexedOption => {
-            indexedOption.disabled = isDisabled("collarOptions", indexedOption.name)
-        })*/
-
-        console.log($indexedCollarOptions)
-    });
-
-    function getIsDisabled(collarOption){
-        let d = isDisabled("collarOptions", collarOption);
-        console.log("actually returning " + d);
-        return d;
-    }
+            return opts;
+        }
+    );
 </script>
 
 <h2>Collar</h2>
 <div class="buttoncontainer">
-    {#key $selections}
-        {#each $indexedCollarOptions as collarOption}
-            <button
-                class="optionButton"
-                aria-label={collarOption["name"]}
-                disabled={$indexedCollarOptions[collarOption.id].disabled}
-                style={($selections.collar === collarOption["name"]) ? 'border-color: deepskyblue' : ''}
-                onclick={() => $selections.collar = collarOption["name"]}
-            >{collarOption.name}</button>
-        {/each}
-    {/key}
+    {#each indexedCollarOptions as indexedCollarOption}
+        <button
+            class="optionButton"
+            aria-label={indexedCollarOption["name"]}
+            disabled={indexedCollarOptions[indexedCollarOption.id].disabled}
+            style={($selections.collar === indexedCollarOption["name"]) ? 'border-color: deepskyblue' : ''}
+            onclick={() => $selections.collar = indexedCollarOption["name"]}
+        >{indexedCollarOption.name}</button>
+    {/each}
 </div>
 
 <style>
