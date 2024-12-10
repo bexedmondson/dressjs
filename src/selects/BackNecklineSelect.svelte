@@ -1,6 +1,6 @@
 <script>
     import {backNecklines} from "$lib/data.json";
-    import {backNeckline} from "$lib/choices.js";
+    import {backNeckline} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Back Neckline</h2>

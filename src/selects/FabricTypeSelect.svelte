@@ -1,6 +1,6 @@
 <script>
     import {fabricTypes} from "$lib/data.json";
-    import {selections} from "$lib/choices.js";
+    import {selections} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Fabric Type</h2>

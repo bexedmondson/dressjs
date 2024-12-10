@@ -1,6 +1,6 @@
 <script>
     import {pocketOptions} from "$lib/data.json";
-    import {pockets} from "$lib/choices.js";
+    import {pockets} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Pockets</h2>

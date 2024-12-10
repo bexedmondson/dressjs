@@ -1,6 +1,6 @@
 <script>
     import {waistlineOptions} from "$lib/data.json";
-    import {waistline} from "$lib/choices.js";
+    import {waistline} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Waistline</h2>

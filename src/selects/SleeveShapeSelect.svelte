@@ -1,6 +1,6 @@
 <script>
     import {sleeveShapes} from "$lib/data.json";
-    import {sleeveShape} from "$lib/choices.js";
+    import {sleeveShape} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Sleeve Shape</h2>

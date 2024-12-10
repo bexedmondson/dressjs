@@ -1,6 +1,6 @@
 <script>
     import {hemStyles} from "$lib/data.json";
-    import {hemStyle} from "$lib/choices.js";
+    import {hemStyle} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Hem Style</h2>

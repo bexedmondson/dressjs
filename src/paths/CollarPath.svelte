@@ -1,7 +1,7 @@
 <script>
     import '$lib/collars.js';
     import * as collars from '$lib/collars.js';
-    import {selections, collarPoints} from "$lib/choices";
+    import {selections, collarPoints} from "$lib/choices.svelte";
 
     let left = collarPoints.left;
     let right = collarPoints.right;

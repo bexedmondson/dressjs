@@ -1,6 +1,6 @@
 <script>
     import {skirtShapes} from "$lib/data.json";
-    import {skirtShape} from "$lib/choices.js";
+    import {skirtShape} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Skirt Shape</h2>

@@ -1,7 +1,7 @@
 <script>
     import '$lib/waist.js';
     import * as waist from '$lib/waist.js';
-    import {waistline, waistCinch, maxDiagramHeight, maxDiagramWidth} from "$lib/choices";
+    import {waistline, waistCinch, maxDiagramHeight, maxDiagramWidth} from "$lib/choices.svelte";
 </script>
 
 {#if ($waistCinch === "thin elastic")}

@@ -1,6 +1,6 @@
 <script>
     import {sleeveAdditions} from "$lib/data.json";
-    import {sleeveAddition} from "$lib/choices.js";
+    import {sleeveAddition} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Sleeve Additions</h2>

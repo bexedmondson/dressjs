@@ -1,6 +1,6 @@
 <script>
     import {waistCinchOptions} from "$lib/data.json";
-    import {waistCinch} from "$lib/choices.js";
+    import {waistCinch} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Waist Cinch</h2>

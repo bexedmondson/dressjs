@@ -1,6 +1,6 @@
 <script>
     import {skirtLengths} from "$lib/data.json";
-    import {skirtLength} from "$lib/choices.js";
+    import {skirtLength} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Skirt Length</h2>

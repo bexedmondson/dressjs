@@ -1,6 +1,6 @@
 <script>
     import {skirtExtras} from "$lib/data.json";
-    import {skirtExtra} from "$lib/choices.js";
+    import {skirtExtra} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Skirt Extras</h2>

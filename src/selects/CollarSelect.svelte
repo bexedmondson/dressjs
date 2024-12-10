@@ -1,6 +1,6 @@
 <script>
     import {collarOptions} from "$lib/data.json";
-    import {selections, isDisabled} from "$lib/choices.js";
+    import {selections, isDisabled} from "$lib/choices.svelte.js";
     import { derived } from 'svelte/store';
 
     let indexedCollarOptions = $derived.by(() => {

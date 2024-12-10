@@ -1,6 +1,6 @@
 <script>
     import {linings} from "$lib/data.json";
-    import {lining} from "$lib/choices.js";
+    import {lining} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Lining</h2>

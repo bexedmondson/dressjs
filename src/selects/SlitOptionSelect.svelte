@@ -1,6 +1,6 @@
 <script>
     import {slitOptions} from "$lib/data.json";
-    import {slits} from "$lib/choices.js";
+    import {slits} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Slits</h2>

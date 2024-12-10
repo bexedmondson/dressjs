@@ -1,6 +1,6 @@
 <script>
     import {fabricStyles} from "$lib/data.json";
-    import {selections, fabricStyle} from "$lib/choices.js";
+    import {selections, fabricStyle} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Fabric Style</h2>

@@ -1,6 +1,6 @@
 <script>
     import {sleeveLengths} from "$lib/data.json";
-    import {sleeveLength} from "$lib/choices.js";
+    import {sleeveLength} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Sleeve Length</h2>
