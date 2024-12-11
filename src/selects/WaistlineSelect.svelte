@@ -1,6 +1,6 @@
 <script>
     import {waistlineOptions} from "$lib/data.json";
-    import {waistline} from "$lib/choices.js";
+    import {selections} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Waistline</h2>
@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={waistlineOption}
-        style={($waistline === waistlineOption) ? 'border-color: deepskyblue' : ''}
-        onclick={() => $waistline = waistlineOption}
+        style={(selections.waistline === waistlineOption) ? 'border-color: deepskyblue' : ''}
+        onclick={() => selections.waistline = waistlineOption}
     >{waistlineOption}</button>
     {/each}
 </div>

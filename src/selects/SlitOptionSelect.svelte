@@ -1,6 +1,6 @@
 <script>
     import {slitOptions} from "$lib/data.json";
-    import {slits} from "$lib/choices.js";
+    import {selections} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Slits</h2>
@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={slitOption}
-        style={($slits === slitOption) ? 'border-color: deepskyblue' : ''}
-        onclick={() => $slits = slitOption}
+        style={(selections.slits === slitOption) ? 'border-color: deepskyblue' : ''}
+        onclick={() => selections.slits = slitOption}
     >{slitOption}</button>
     {/each}
 </div>

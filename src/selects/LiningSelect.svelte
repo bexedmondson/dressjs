@@ -1,6 +1,6 @@
 <script>
     import {linings} from "$lib/data.json";
-    import {lining} from "$lib/choices.js";
+    import {selections} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Lining</h2>
@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={liningOption}
-        style={($lining === liningOption) ? 'border-color: deepskyblue' : ''}
-        onclick={() => $lining = liningOption}
+        style={(selections.lining === liningOption) ? 'border-color: deepskyblue' : ''}
+        onclick={() => selections.lining = liningOption}
     >{liningOption}</button>
     {/each}
 </div>

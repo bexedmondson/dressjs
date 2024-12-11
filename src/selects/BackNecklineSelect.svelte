@@ -1,6 +1,6 @@
 <script>
     import {backNecklines} from "$lib/data.json";
-    import {backNeckline} from "$lib/choices.js";
+    import {selections} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Back Neckline</h2>
@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={backNecklineOption}
-        style={($backNeckline === backNecklineOption) ? 'border-color: deepskyblue' : ''}
-        onclick={() => $backNeckline = backNecklineOption}
+        style={(selections.backNeckline === backNecklineOption) ? 'border-color: deepskyblue' : ''}
+        onclick={() => selections.backNeckline = backNecklineOption}
     >{backNecklineOption}</button>
     {/each}
 </div>

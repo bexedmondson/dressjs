@@ -1,6 +1,6 @@
 <script>
     import {skirtExtras} from "$lib/data.json";
-    import {skirtExtra} from "$lib/choices.js";
+    import {selections} from "$lib/choices.svelte.js";
 </script>
 
 <h2>Skirt Extras</h2>
@@ -9,8 +9,8 @@
     <button
         class="optionButton"
         aria-label={skirtExtraOption}
-        style={($skirtExtra === skirtExtraOption) ? 'border-color: deepskyblue' : ''}
-        onclick={() => $skirtExtra = skirtExtraOption}
+        style={(selections.skirtExtra === skirtExtraOption) ? 'border-color: deepskyblue' : ''}
+        onclick={() => selections.skirtExtra = skirtExtraOption}
     >{skirtExtraOption}</button>
     {/each}
 </div>
