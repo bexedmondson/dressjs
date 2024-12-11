@@ -2,10 +2,9 @@
 import * as data from "$lib/data.json"; 
 import * as restrictions from "$lib/restrictions.json";
 
-let initialFabricType = data.fabricTypes[0];
 export const selections = $state({
-        fabricType: initialFabricType,
-        fabricStyle: data.fabricStyles[initialFabricType][0],
+        fabricType: data.fabricTypes[0],
+        fabricStyle: data.fabricStyles[0],
         lining: data.linings[0],
         collar: data.collarOptions[0],
         backNeckline: data.backNecklines[0],
@@ -25,24 +24,28 @@ export const selections = $state({
 
 const map = $derived(
     [
-        { categoryName: "fabricTypes",          selection: selections.fabricType     },
-        { categoryName: "fabricStyles",         selection: selections.fabricStyle    },
-        { categoryName: "linings",              selection: selections.lining         },
-        { categoryName: "collarOptions",        selection: selections.collar         },
-        { categoryName: "backNecklines",        selection: selections.backNeckline   },
-        { categoryName: "sleeveLengths",        selection: selections.sleeveLength   },
-        { categoryName: "sleeveShapes",         selection: selections.sleeveShape    },
-        { categoryName: "sleeveAdditions",      selection: selections.sleeveAddition },
-        { categoryName: "waistlineOptions",     selection: selections.waistline      },
-        { categoryName: "waistCinchOptions",    selection: selections.waistCinch     },
-        { categoryName: "skirtShapes",          selection: selections.skirtShape     },
-        { categoryName: "skirtLengths",         selection: selections.skirtLength    },
-        { categoryName: "skirtExtras",          selection: selections.skirtExtra     },
-        { categoryName: "hemStyles",            selection: selections.hemStyle       },
-        { categoryName: "slitOptions",          selection: selections.slits          },
-        { categoryName: "pocketOptions",        selection: selections.pockets        }
+        { categoryName: "fabricTypes",          selection: selections.fabricType,     setter: (val) => selections.fabricType = val      },
+        { categoryName: "fabricStyles",         selection: selections.fabricStyle,    setter: (val) => selections.fabricStyle = val     },
+        { categoryName: "linings",              selection: selections.lining,         setter: (val) => selections.lining = val          },
+        { categoryName: "collarOptions",        selection: selections.collar,         setter: (val) => selections.collar = val          },
+        { categoryName: "backNecklines",        selection: selections.backNeckline,   setter: (val) => selections.backNeckline = val    },
+        { categoryName: "sleeveLengths",        selection: selections.sleeveLength,   setter: (val) => selections.sleeveLength = val    },
+        { categoryName: "sleeveShapes",         selection: selections.sleeveShape,    setter: (val) => selections.sleeveShape = val     },
+        { categoryName: "sleeveAdditions",      selection: selections.sleeveAddition, setter: (val) => selections.sleeveAddition = val  },
+        { categoryName: "waistlineOptions",     selection: selections.waistline,      setter: (val) => selections.waistline = val       },
+        { categoryName: "waistCinchOptions",    selection: selections.waistCinch,     setter: (val) => selections.waistCinch = val      },
+        { categoryName: "skirtShapes",          selection: selections.skirtShape,     setter: (val) => selections.skirtShape = val      },
+        { categoryName: "skirtLengths",         selection: selections.skirtLength,    setter: (val) => selections.skirtLength = val     },
+        { categoryName: "skirtExtras",          selection: selections.skirtExtra,     setter: (val) => selections.skirtExtra = val      },
+        { categoryName: "hemStyles",            selection: selections.hemStyle,       setter: (val) => selections.hemStyle = val        },
+        { categoryName: "slitOptions",          selection: selections.slits,          setter: (val) => selections.slits = val           },
+        { categoryName: "pocketOptions",        selection: selections.pockets,        setter: (val) => selections.pockets = val         }
     ]
 );
+
+export function getCategoryNameSelectionMap() {
+    return map;
+}
 
 export const maxDiagramWidth = $state(150.0);
 export const maxDiagramHeight = $state(200.0);
@@ -73,4 +76,8 @@ export function isDisabled(category, option) {
     }
     
     return false;
+}
+
+export function setSelection(choice, category) {
+    map.find((mapping) => mapping.categoryName === category).setter(choice);
 }

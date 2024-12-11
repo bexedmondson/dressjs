@@ -12,47 +12,68 @@
     },
     "fabricStyles":
     {
-        "knit":
+        "bulky":
         {
-            "bulky":
-            {
-    
-            },
-            "slippery":
-            {
-    
-            },
-            "sturdy":
-            {
-    
-            },
-            "thin":
-            {
-    
-            },
-            "lacy":
-            {
-
-            }
+            "fabricTypes":
+            [
+                "woven"
+            ]
         },
-        "woven":
+        "slippery":
         {
-            "heavy":
-            {
-    
-            },
-            "medium":
-            {
-    
-            },
-            "silky":
-            {
-    
-            },
-            "sheer":
-            {
-
-            }
+            "fabricTypes":
+            [
+                "woven"
+            ]
+        },
+        "sturdy":
+        {
+            "fabricTypes":
+            [
+                "woven"
+            ]
+        },
+        "thin":
+        {
+            "fabricTypes":
+            [
+                "woven"
+            ]
+        },
+        "lacy":
+        {
+            "fabricTypes":
+            [
+                "woven"
+            ]
+        },
+        "heavy":
+        {
+            "fabricTypes":
+            [
+                "knit"
+            ]
+        },
+        "medium":
+        {
+            "fabricTypes":
+            [
+                "knit"
+            ]
+        },
+        "silky":
+        {
+            "fabricTypes":
+            [
+                "knit"
+            ]
+        },
+        "sheer":
+        {
+            "fabricTypes":
+            [
+                "knit"
+            ]
         }
     },
     "linings":

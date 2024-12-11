@@ -5,23 +5,17 @@
         "woven"
     ],
     "fabricStyles":
-    {
-        "knit":
-        [
-            "bulky",
-            "slippery",
-            "sturdy",
-            "thin",
-            "lacy"
-        ],
-        "woven":
-        [
-            "heavy",
-            "medium",
-            "silky",
-            "sheer"
-        ]
-    },
+    [
+        "bulky",
+        "slippery",
+        "sturdy",
+        "thin",
+        "lacy",
+        "heavy",
+        "medium",
+        "silky",
+        "sheer"
+    ],
     "linings":
     [
         "none",

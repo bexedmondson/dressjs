@@ -1,27 +1,11 @@
 <script>
 	import { draw } from 'svelte/transition';
-    import '$lib/collars.js';
+    import {getCategoryNameSelectionMap, maxDiagramHeight, maxDiagramWidth} from "$lib/choices.svelte.js";
+    import OptionSelect from '../components/OptionSelect.svelte';
     import CollarPath from "../paths/CollarPath.svelte";
-    import CollarSelect from '../selects/CollarSelect.svelte';
     import ShoulderPath from '../paths/ShoulderPath.svelte';
     import TorsoPath from '../paths/TorsoPath.svelte';
-    import WaistlineSelect from '../selects/WaistlineSelect.svelte';
-    import WaistCinchSelect from '../selects/WaistCinchSelect.svelte';
     import WaistPath from "../paths/WaistPath.svelte";
-    import {selections, maxDiagramHeight, maxDiagramWidth} from "$lib/choices.svelte.js";
-    import FabricTypeSelect from '../selects/FabricTypeSelect.svelte';
-    import FabricStyleSelect from '../selects/FabricStyleSelect.svelte';
-    import LiningSelect from '../selects/LiningSelect.svelte';
-    import BackNecklineSelect from '../selects/BackNecklineSelect.svelte';
-    import SleeveLengthSelect from '../selects/SleeveLengthSelect.svelte';
-    import SleeveShapeSelect from '../selects/SleeveShapeSelect.svelte';
-    import SleeveAdditionSelect from '../selects/SleeveAdditionSelect.svelte';
-    import SkirtShapeSelect from '../selects/SkirtShapeSelect.svelte';
-    import SkirtLengthSelect from '../selects/SkirtLengthSelect.svelte';
-    import SkirtExtrasSelect from '../selects/SkirtExtrasSelect.svelte';
-    import HemStyleSelect from '../selects/HemStyleSelect.svelte';
-    import SlitOptionSelect from '../selects/SlitOptionSelect.svelte';
-    import PocketSelect from '../selects/PocketSelect.svelte';
 </script>
 
 <div class="all">
@@ -32,34 +16,14 @@
 <div class="parent-container">
     <div class="buttoncolumn">
         <div class="buttonscroll">
-            <FabricTypeSelect></FabricTypeSelect>
-            <FabricStyleSelect></FabricStyleSelect>
-            <LiningSelect></LiningSelect>
-            <CollarSelect></CollarSelect>
-            <BackNecklineSelect></BackNecklineSelect>
-            <SleeveLengthSelect></SleeveLengthSelect>
-            <SleeveShapeSelect></SleeveShapeSelect>
-            <SleeveAdditionSelect></SleeveAdditionSelect>
-            <WaistlineSelect></WaistlineSelect>
-            <WaistCinchSelect></WaistCinchSelect>
-            <SkirtShapeSelect></SkirtShapeSelect>
-            <SkirtLengthSelect></SkirtLengthSelect>
-            <SkirtExtrasSelect></SkirtExtrasSelect>
-            <HemStyleSelect></HemStyleSelect>
-            <SlitOptionSelect></SlitOptionSelect>
-            <PocketSelect></PocketSelect>
+            {#each getCategoryNameSelectionMap() as categoryNameSelectionPair, key}
+                <OptionSelect bind:selection={categoryNameSelectionPair.selection} optionCategoryName={categoryNameSelectionPair.categoryName}></OptionSelect>
+            {/each}
         </div>
     </div>
 
     <div class="diagram">
         <svg viewBox="0 0 {maxDiagramWidth} {maxDiagramHeight}" preserveAspectRatio="meet" xmlns="http://www.w3.org/2000/svg">
-            <!--to establish overall size of diagram-->
-            <!--path
-                d="M 0,0 L 0,200 L 100,200"
-                fill="none"
-                stroke="white"
-                stroke-width="1px"
-            /-->
             <CollarPath />
             <ShoulderPath />
             <TorsoPath />
