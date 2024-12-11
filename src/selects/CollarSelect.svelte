@@ -16,9 +16,6 @@
             }
         );
     })
-
-    $inspect(collarStates);
-
 </script>
 
 <h2>Collar</h2>
