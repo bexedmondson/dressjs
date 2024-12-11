@@ -17,31 +17,31 @@ export const selections = $state({
         skirtShape: data.skirtShapes[0],
         skirtLength: data.skirtLengths[0],
         skirtExtra: data.skirtExtras[0],
-        hemStyles: data.hemStyles[0],
+        hemStyle: data.hemStyles[0],
         slits: data.slitOptions[0],
         pockets: data.pocketOptions[0]
     }
 );
 
 const map = $derived(
-    {
-        "fabricTypes": selections.fabricType,
-        "fabricStyles": selections.fabricStyle,
-        "linings": selections.lining,
-        "collarOptions": selections.collar,
-        "backNecklines": selections.backNeckline,
-        "sleeveLengths": selections.sleeveLength,
-        "sleeveShapes": selections.sleeveShape,
-        "sleeveAdditions": selections.sleeveAddition,
-        "waistlineOptions": selections.waistline,
-        "waistCinchOptions": selections.waistCinch,
-        "skirtShapes": selections.skirtShape,
-        "skirtLengths": selections.skirtLength,
-        "skirtExtras": selections.skirtExtra,
-        "hemStyles": selections.hemStyle,
-        "slitOptions": selections.slits,
-        "pocketOptions": selections.pockets
-    }
+    [
+        { categoryName: "fabricTypes",          selection: selections.fabricType     },
+        { categoryName: "fabricStyles",         selection: selections.fabricStyle    },
+        { categoryName: "linings",              selection: selections.lining         },
+        { categoryName: "collarOptions",        selection: selections.collar         },
+        { categoryName: "backNecklines",        selection: selections.backNeckline   },
+        { categoryName: "sleeveLengths",        selection: selections.sleeveLength   },
+        { categoryName: "sleeveShapes",         selection: selections.sleeveShape    },
+        { categoryName: "sleeveAdditions",      selection: selections.sleeveAddition },
+        { categoryName: "waistlineOptions",     selection: selections.waistline      },
+        { categoryName: "waistCinchOptions",    selection: selections.waistCinch     },
+        { categoryName: "skirtShapes",          selection: selections.skirtShape     },
+        { categoryName: "skirtLengths",         selection: selections.skirtLength    },
+        { categoryName: "skirtExtras",          selection: selections.skirtExtra     },
+        { categoryName: "hemStyles",            selection: selections.hemStyle       },
+        { categoryName: "slitOptions",          selection: selections.slits          },
+        { categoryName: "pocketOptions",        selection: selections.pockets        }
+    ]
 );
 
 let maxWidth = 150.0;
@@ -61,26 +61,17 @@ export function shoulderPoints() {
     return shoulderPts;
 }
 
-export function isDisabled(category, selection)
-{
-    let lmap = map; //TODO fix
-    //console.log(selection);
-    Object.entries(lmap).forEach(choiceCategory => {
-        if (choiceCategory[0] in restrictions[category][selection])
-        {
-            //console.log("checking choiceCategory " + choiceCategory[0]);
-            //console.log(restrictions[category][selection][choiceCategory[0]]);
-            restrictions[category][selection][choiceCategory[0]].forEach(restriction => {
-                //console.log("comparing " + lmap[choiceCategory[0]] + " and " + restriction);
-                //console.log(lmap[choiceCategory[0]] === restriction);
-                if (lmap[choiceCategory[0]] === restriction)
-                {
-                    console.log("returning true");
-                    return true;
-                }
-            });
+export function isDisabled(category, option) {
+    const applicableRestrictions = restrictions[category][option];
+    
+    for (const categorySelectionPair of map) {
+        if (typeof applicableRestrictions[categorySelectionPair.categoryName] !== 'undefined') {
+            if (applicableRestrictions[categorySelectionPair.categoryName].includes(categorySelectionPair.selection))
+            {
+                console.log(`found ${categorySelectionPair.categoryName} ${categorySelectionPair.selection} in restriction set for ${category} ${option}`);
+                return true;
+            }
         }
-    });
-
+    }
     return false;
 }

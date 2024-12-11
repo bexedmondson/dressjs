@@ -1,39 +1,37 @@
 <script>
     import {collarOptions} from "$lib/data.json";
     import {selections, isDisabled} from "$lib/choices.svelte.js";
-    import {derived} from 'svelte/store';
+    import { CollarState } from "$lib/CollarState.svelte";
 
-    let indexedCollarOptions = $derived.by(() => {
-            let opts = [];
-            let i = 0;
-            collarOptions.forEach(collarOption => {
-                opts.push(
-                    {
-                        id: i,
-                        name: collarOption,
-                        disabled: isDisabled("collarOptions", collarOption)
-                    }
-                );
-                i++;
-            });
-            console.log(opts);
-
-            return opts;
+    let collarStates = [];
+    collarOptions.forEach(collarOption => {
+            collarStates[collarOption] = new CollarState(collarOption, "collarOptions");
         }
     );
-	//$inspect(indexedCollarOptions).with(console.trace) 
+
+    $effect(() => {
+        selections;
+        collarOptions.forEach(collarOption => {
+                collarStates[collarOption].updateValue()
+            }
+        );
+    })
+
+    $inspect(collarStates);
+
 </script>
 
 <h2>Collar</h2>
+
 <div class="buttoncontainer">
-    {#each indexedCollarOptions as indexedCollarOption}
+    {#each collarOptions as collarOption}
         <button
             class="optionButton"
-            aria-label={indexedCollarOption["name"]}
-            disabled={indexedCollarOptions[indexedCollarOption.id].disabled}
-            style={(selections.collar === indexedCollarOption["name"]) ? 'border-color: deepskyblue' : ''}
-            onclick={() => selections.collar = indexedCollarOption["name"]}
-        >{indexedCollarOption.name}</button>
+            aria-label={collarOption}
+            disabled={collarStates[collarOption].disabled}
+            style={(selections.collar === collarOption) ? 'border-color: deepskyblue' : ''}
+            onclick={() => selections.collar = collarOption}
+        >{collarOption}</button>
     {/each}
 </div>
 
