@@ -1,15 +1,12 @@
 <script>
     import data from "$lib/data.json";
+    import text from "$lib/text.json";
     import { setSelection, selections, isDisabled } from "$lib/choices.svelte.js";
     import { OptionState } from "$lib/OptionState.svelte";
 
     let { selection = $bindable(), optionCategoryName } = $props();
 
-    console.log(optionCategoryName)
-
     let options = data[optionCategoryName];
-
-    console.log(options)
 
     let buttonStates = [];
     options.forEach(option => {
@@ -24,7 +21,7 @@
     })
 </script>
 
-<h2>{optionCategoryName}</h2>
+<h2>{text["title-" + optionCategoryName]}</h2>
 
 <div class="buttoncontainer">
     {#each options as option}
