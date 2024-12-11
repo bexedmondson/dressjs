@@ -49,13 +49,13 @@ export const maxDiagramHeight = $state(200.0);
 
 //got to add .0 to make the maths work
 export function collarPoints() {
-    const collarPts = $derived({ left: [maxWidth * 0.35, 0.0], right: [maxWidth * 0.65, 0.0] });
+    const collarPts = $derived({ left: [maxDiagramWidth * 0.35, 0.0], right: [maxDiagramWidth * 0.65, 0.0] });
     return collarPts;
 }
 
 //TODO: get this from sleeve selection in case of sleeveless
 export function shoulderPoints() {
-    const shoulderPts = $derived({ left: [maxWidth * 0.2, 7.5], right: [maxWidth * 0.8, 7.5] });
+    const shoulderPts = $derived({ left: [maxDiagramWidth * 0.2, 7.5], right: [maxDiagramWidth * 0.8, 7.5] });
     return shoulderPts;
 }
 
