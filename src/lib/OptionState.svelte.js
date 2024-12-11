@@ -1,6 +1,6 @@
 import { isDisabled } from "./choices.svelte"
 
-export class CollarState{
+export class OptionState{
     name = ""
     category = ""
     disabled = $state(false)

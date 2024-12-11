@@ -1,11 +1,11 @@
 <script>
     import {collarOptions} from "$lib/data.json";
     import {selections, isDisabled} from "$lib/choices.svelte.js";
-    import { CollarState } from "$lib/CollarState.svelte";
+    import { OptionState } from "$lib/OptionState.svelte";
 
     let collarStates = [];
     collarOptions.forEach(collarOption => {
-            collarStates[collarOption] = new CollarState(collarOption, "collarOptions");
+            collarStates[collarOption] = new OptionState(collarOption, "collarOptions");
         }
     );
 
