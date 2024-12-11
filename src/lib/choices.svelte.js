@@ -44,10 +44,8 @@ const map = $derived(
     ]
 );
 
-let maxWidth = 150.0;
-let maxHeight = 200.0;
-export const maxDiagramWidth = $state(maxWidth);
-export const maxDiagramHeight = $state(maxHeight);
+export const maxDiagramWidth = $state(150.0);
+export const maxDiagramHeight = $state(200.0);
 
 //got to add .0 to make the maths work
 export function collarPoints() {
@@ -73,5 +71,6 @@ export function isDisabled(category, option) {
             }
         }
     }
+    
     return false;
 }
