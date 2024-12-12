@@ -5,7 +5,7 @@
 </script>
 
 <path
-    d= {getTorsoSidesPath(shoulderPoints, getWaistPoints(maxDiagramWidth, maxDiagramHeight, selections.waistline))}
+    d= {getTorsoSidesPath(shoulderPoints, getWaistPoints(maxDiagramWidth, maxDiagramHeight, selections.waistline, selections.waistCinch))}
     fill="none" 
     stroke="black"
     stroke-width="1px"

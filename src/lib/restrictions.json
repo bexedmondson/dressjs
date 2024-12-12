@@ -353,39 +353,57 @@
     {
         "thin elastic":
         {
-
+            "waistlineOptions": [
+                "none"
+            ]
         },
         "wide elastic":
         {
-
+            "waistlineOptions": [
+                "none"
+            ]
         },
         "shirring":
         {
-
+            "waistlineOptions": [
+                "none"
+            ]
         },
         "drawstring":
         {
-
+            "waistlineOptions": [
+                "none"
+            ]
         },
         "separate sash":
         {
-
+            "waistlineOptions": [
+                "none"
+            ]
         },
         "sewn in sash (1 piece)":
         {
-
+            "waistlineOptions": [
+                "none"
+            ]
         },
         "sewn in sash (2 pieces)":
         {
-
+            "waistlineOptions": [
+                "none"
+            ]
         },
         "sewn in sash (4 pieces)":
         {
-
+            "waistlineOptions": [
+                "none"
+            ]
         },
         "lacing":
         {
-
+            "waistlineOptions": [
+                "none"
+            ]
         }
     },
     "skirtShapes":

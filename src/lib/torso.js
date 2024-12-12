@@ -3,12 +3,12 @@ export function getTorsoSidesPath(shoulderPoints, waistPoints)
     let leftOrigin = shoulderPoints().left;
     let leftTerminal = [waistPoints.x0, waistPoints.y0];
     let rightOrigin = shoulderPoints().right;
-    let rightTerminal = [waistPoints.x1, waistPoints.y1];
+    let rightTerminal = [waistPoints.x1, waistPoints.y0];
 
     let originTangentXOffset = 0;
     let originTangentYOffset = (leftTerminal[1] - leftOrigin[1]) * 0.4;
     let terminalTangentXOffset = (leftTerminal[0] - leftOrigin[0]) * 0.3;
-    let terminalTangentYOffset = 0;
+    let terminalTangentYOffset = (leftTerminal[1] - leftOrigin[1]) * 0.1;
 
 
     let path =  `M ${leftOrigin[0]},${leftOrigin[1]} 
