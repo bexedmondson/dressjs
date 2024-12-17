@@ -1,26 +1,26 @@
 export function getWaistCinchThinElastic(maxX, maxY, waistline, waistCinch)
 {
-    let w = getWaistPoints(maxX, maxY, waistline, waistCinch);
+    const w = getWaistPoints(maxX, maxY, waistline, waistCinch);
     return `M ${w.x0},${w.y0} L ${w.x1},${w.y1}`;
 }
 
 export function getWaistCinchDrawstring(maxX, maxY, waistline, waistCinch)
 {
-    let s = getWaistCinchThinElastic(maxX, maxY, waistline, waistCinch);
+    const s = getWaistCinchThinElastic(maxX, maxY, waistline, waistCinch);
 
-    let w = getWaistPoints(maxX, maxY, waistline, waistCinch);
-    let lx = w.x0;
-    let ly = w.y0;
-    let rx = w.x1;
-    let ry = w.y1;
-    let d = rx - lx;
+    const w = getWaistPoints(maxX, maxY, waistline, waistCinch);
+    const lx = w.x0;
+    const ly = w.y0;
+    const rx = w.x1;
+    const ry = w.y1;
+    const d = rx - lx;
 
-    let mx = (rx + lx) / 2;
-    let my = (ry + ly) / 2;
+    const mx = (rx + lx) / 2;
+    const my = (ry + ly) / 2;
 
-    let l1 = d * 0.3;
-    let l2 = d * 0.4;
-    let xdiff = d * 0.02;
+    const l1 = d * 0.3;
+    const l2 = d * 0.4;
+    const xdiff = d * 0.02;
 
     return `${s} 
     M ${mx},${my} 
@@ -31,7 +31,7 @@ export function getWaistCinchDrawstring(maxX, maxY, waistline, waistCinch)
 
 export function getWaistCinchWideElastic(maxX, maxY, waistline, waistCinch)
 {
-    let w = getWaistPoints(maxX, maxY, waistline, waistCinch);
+    const w = getWaistPoints(maxX, maxY, waistline, waistCinch);
     return `M ${w.x0},${w.y0} 
     L ${w.x1},${w.y0}
     L ${w.x1},${w.y1}
@@ -41,11 +41,11 @@ export function getWaistCinchWideElastic(maxX, maxY, waistline, waistCinch)
 
 export function getWaistCinchShirring(maxX, maxY, waistline, waistCinch)
 {
-    let w = getWaistPoints(maxX, maxY, waistline, waistCinch);
+    const w = getWaistPoints(maxX, maxY, waistline, waistCinch);
 
-    let xdiff = (w.x1 - w.x0) / 10.0;
+    const xdiff = (w.x1 - w.x0) / 10.0;
 
-    let s = `M ${w.x0},${w.y0} 
+    const s = `M ${w.x0},${w.y0} 
     V ${w.y1}
     M ${w.x0 + xdiff},${w.y0} 
     V ${w.y1}
@@ -105,11 +105,11 @@ export function getWaistPoints(maxX, maxY, waistline, waistCinch)
         }
     }
 
-    let y = maxY * getWaistYRatio(waistline);
-    let l = maxX * 0.35;
-    let r = maxX * 0.65;
+    const y = maxY * getWaistYRatio(waistline);
+    const l = maxX * 0.35;
+    const r = maxX * 0.65;
 
-    let h = 0;
+    const h = 0;
 
     switch (waistCinch)
     {

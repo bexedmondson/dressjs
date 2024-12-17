@@ -1,15 +1,15 @@
 export function getShoulderPathDefault(collarPoints, shoulderPoints)
 {
-    let leftOrigin = shoulderPoints().left;
-    let leftTerminal = collarPoints().left;
-    let rightOrigin = shoulderPoints().right;
-    let rightTerminal = collarPoints().right;
+    const leftOrigin = shoulderPoints().left;
+    const leftTerminal = collarPoints().left;
+    const rightOrigin = shoulderPoints().right;
+    const rightTerminal = collarPoints().right;
 
-    let terminalTangentXOffset = (leftTerminal[0] - leftOrigin[0]) / 2.0;
-    let originTangentOffset = (leftOrigin[1] - leftTerminal[1]) * 0.6;
+    const terminalTangentXOffset = (leftTerminal[0] - leftOrigin[0]) / 2.0;
+    const originTangentOffset = (leftOrigin[1] - leftTerminal[1]) * 0.6;
 
 
-    let path = `M ${leftOrigin[0]},${leftOrigin[1]} 
+    const path = `M ${leftOrigin[0]},${leftOrigin[1]} 
     C ${leftOrigin[0] + originTangentOffset},${leftOrigin[1] - originTangentOffset}
     ${leftTerminal[0] - terminalTangentXOffset},${leftTerminal[1]}
     ${leftTerminal[0]},${leftTerminal[1]}
