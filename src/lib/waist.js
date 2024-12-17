@@ -73,8 +73,7 @@ export function getWaistCinchShirring(maxX, maxY, waistline, waistCinch)
     return s;
 }
 
-/* "drawstring",
-"separate sash",
+/* separate sash",
 "sewn in sash (1 piece)",
 "sewn in sash (2 pieces)",
 "sewn in sash (4 pieces)",

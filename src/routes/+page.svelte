@@ -6,6 +6,7 @@
     import ShoulderPath from '../paths/ShoulderPath.svelte';
     import TorsoPath from '../paths/TorsoPath.svelte';
     import WaistPath from "../paths/WaistPath.svelte";
+    import SkirtPath from '../paths/SkirtPath.svelte';
 </script>
 
 <div class="all">
@@ -28,6 +29,7 @@
             <ShoulderPath />
             <TorsoPath />
             <WaistPath />
+            <SkirtPath />
         </svg>
     </div>
 	

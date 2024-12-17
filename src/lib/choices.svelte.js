@@ -14,7 +14,7 @@ export const selections = $state({
         waistline: "natural",
         waistCinch: data.waistCinchOptions[0],
         skirtShape: data.skirtShapes[0],
-        skirtLength: data.skirtLengths[0],
+        skirtLength: "midi",
         skirtExtra: data.skirtExtras[0],
         hemStyle: data.hemStyles[0],
         slits: data.slitOptions[0],
