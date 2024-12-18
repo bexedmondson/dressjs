@@ -1,11 +1,10 @@
 export function getSkirtSidesPath(waistPoints, skirtLength, skirtShape, maxDiagramWidth, maxDiagramHeight)
 {
     const yRatio = getSkirtYRatio(skirtLength);
-    const originY = yRatio * maxDiagramHeight; //TODO account of asymmetry
+    const originY = yRatio * maxDiagramHeight; //TODO account for asymmetry
 
-    const leftOriginX = waistPoints.x0 * (1 - yRatio);
-    const rightOriginX = waistPoints.x1 + (maxDiagramWidth - waistPoints.x1) * yRatio;
-
+    const leftOriginX = waistPoints.x0 / 3 + waistPoints.x0 / 2 * (1 - yRatio);
+    const rightOriginX = waistPoints.x1 + (maxDiagramWidth - (maxDiagramWidth - waistPoints.x1) / 3 - waistPoints.x1) * yRatio;
 
     const leftTerminal = [waistPoints.x0, waistPoints.y1];
     const rightTerminal = [waistPoints.x1, waistPoints.y1];
@@ -39,18 +38,18 @@ function getSkirtYRatio(skirtLength)
     switch (skirtLength)
     {
         case "mini":
-            return 0.64;
-        case "above knee":
-            return 0.67;
-        case "knee length":
             return 0.7;
+        case "above knee":
+            return 0.75;
+        case "knee length":
+            return 0.8;
         case "midi":
-            return 0.75
+            return 0.85
         case "tea":
-            return 0.85;
+            return 0.87;
         case "maxi":
-            return 0.9;
-        case "floor":
             return 0.95;
+        case "floor":
+            return 1;
     }
 }

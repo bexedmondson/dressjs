@@ -1,6 +1,6 @@
 <script>
 	import { draw } from 'svelte/transition';
-    import {getCategoryNameSelectionMap, maxDiagramHeight, maxDiagramWidth} from "$lib/choices.svelte.js";
+    import {getCategoryNameSelectionMap, maxDiagramHeight, maxDiagramWidth, viewBoxHeight, viewBoxWidth} from "$lib/choices.svelte.js";
     import OptionSelect from '../components/OptionSelect.svelte';
     import CollarPath from "../paths/CollarPath.svelte";
     import ShoulderPath from '../paths/ShoulderPath.svelte';
@@ -24,7 +24,7 @@
     </div>
 
     <div class="diagram">
-        <svg viewBox="0 0 {maxDiagramWidth} {maxDiagramHeight}" preserveAspectRatio="meet" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 {viewBoxWidth.max} {viewBoxHeight.max}" preserveAspectRatio="meet" xmlns="http://www.w3.org/2000/svg">
             <CollarPath />
             <ShoulderPath />
             <TorsoPath />

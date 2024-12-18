@@ -47,18 +47,20 @@ export function getCategoryNameSelectionMap() {
     return map;
 }
 
-export const maxDiagramWidth = $state(150.0);
-export const maxDiagramHeight = $state(200.0);
+export const maxDiagramWidth = 150.0;
+export const maxDiagramHeight = 200.0;
+export const viewBoxWidth = {min: -20, max: 170}; //TODO figure out
+export const viewBoxHeight = {min: -20, max: 220};
 
 //got to add .0 to make the maths work
 export function collarPoints() {
-    const collarPts = $derived({ left: [maxDiagramWidth * 0.3, 15.0], right: [maxDiagramWidth * 0.7, 15.0] });
+    const collarPts = $derived({ left: [maxDiagramWidth * 0.35, 15.0], right: [maxDiagramWidth * 0.65, 15.0] });
     return collarPts;
 }
 
 //TODO: get this from sleeve selection in case of sleeveless
 export function shoulderPoints() {
-    const shoulderPts = $derived({ left: [maxDiagramWidth * 0.2, 22.5], right: [maxDiagramWidth * 0.8, 22.5] });
+    const shoulderPts = $derived({ left: [maxDiagramWidth * 0.25, 22.5], right: [maxDiagramWidth * 0.75, 22.5] });
     return shoulderPts;
 }
 

@@ -86,11 +86,11 @@ function getWaistYRatio(waistline)
         case "empire":
             return 0.3;
         case "high":
-            return 0.4;
+            return 0.35;
         case "low":
-            return 0.5;
-        default:
             return 0.45;
+        default:
+            return 0.4;
     }
 }
 
